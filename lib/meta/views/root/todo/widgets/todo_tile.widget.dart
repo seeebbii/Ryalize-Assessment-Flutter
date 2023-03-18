@@ -28,6 +28,7 @@ class TodoTileWidget extends StatelessWidget {
         navigationController.navigateToNamedWithArg(
             RouteGenerator.createTodoScreen,
             {'newTodo': false, 'todo': todo, 'index': index});
+
       },
       minLeadingWidth: 0,
       leading: Checkbox(
