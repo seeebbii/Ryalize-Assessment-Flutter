@@ -10,6 +10,7 @@ import 'package:ryalize_assessment/core/models/todo/todo.model.dart';
 import 'package:ryalize_assessment/core/notifiers/authentication.notifier.dart';
 import 'package:ryalize_assessment/core/notifiers/todo.notifier.dart';
 import 'package:ryalize_assessment/core/router/router_generator.dart';
+import 'package:ryalize_assessment/core/view_models/todo_VM.dart';
 
 import 'widgets/render_todo_list.widget.dart';
 
@@ -70,8 +71,8 @@ class _RootTodoScreenState extends State<RootTodoScreen> {
           }),
       floatingActionButton: FloatingActionButton(
           onPressed: () {
-            navigationController
-                .navigateToNamedWithArg(RouteGenerator.createTodoScreen, {
+            context.read<TodoVM>().clear();
+            navigationController.navigateToNamedWithArg(RouteGenerator.createTodoScreen, {
               'newTodo': true,
             });
           },
